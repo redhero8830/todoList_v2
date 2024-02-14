@@ -1,39 +1,124 @@
 body {
-  margin: 0;
-  background-image: url("https://i.pinimg.com/originals/06/49/70/064970ba99e47951e5aa094f8d13892c.gif");
+  background-image: url("https://img.freepik.com/free-vector/white-background-with-triangle-patterns_1017-18410.jpg");
 }
 
 .container {
-  background-color: white;
-  height: 100vh;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-.task-area {
-  border: 1px solid teal;
+
+h1 {
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0;
 }
-.task-tabs {
-  display: flex;
-  border-bottom: 1px solid teal;
+
+.input-area {
+  margin-bottom: 20px;
   position: relative;
 }
 
-.task-tabs div {
+.input {
+  width: calc(100% - 40px);
   padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  box-shadow: none;
 }
-#under-line {
-  height: 4px;
-  background-color: red;
-  position: absolute;
-  width: 50px;
-  left: 0px;
-  top: 40px;
+
+.input:focus {
+  outline: none;
+  border-bottom-color: #000;
+}
+
+input:focus + label span,
+.input:not(:placeholder-shown) + label span {
+  transform: translateY(-18px);
+  font-size: 12px;
+  color: #000;
+}
+
+#all, #ongoing, #done{
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+}
+button#addBtn {
+  width: 40px;
+  height: 40px;
   padding: 0;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.tab-type {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tab-type div {
+  flex: 1;
+  text-align: center;
+  color: #777;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-type div:hover,
+.tab-type div:focus {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.selected-tab {
+  color: #000;
+  background-color: #f0f0f0;
+  border-radius: 5px;
 }
 
 .task {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task:last-child {
+  margin-bottom: 0;
+}
+
+.task button {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.task button:hover {
+  transform: scale(1.2);
+}
+
+.task button img {
+  width: 20px;
+  height: 20px;
 }
